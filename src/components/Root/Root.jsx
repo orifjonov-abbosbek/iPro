@@ -9,7 +9,7 @@ import "./Root.scss";
 import Nav from "../navbar/nav";
 import Footer from "../Footer/Footer";
 import Register from "../../pages/RegisterAndLogin/RL";
-
+import Projects from "../../pages/Projects/Projects";
 const Root = () => {
   const [loading, setLoading] = useState(true);
 
@@ -49,6 +49,7 @@ const Root = () => {
         <Route path="/social" element={<Social />} />
         <Route path="/price" element={<Price />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/projects" element={<Projects />} />
       </Routes>
 
       <Footer />
