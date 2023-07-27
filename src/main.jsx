@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Root from "./components/Root/Root";
 import "./base.scss";
-import { I18nextProvider } from "react-i18next";
 import { ThemeProvider } from "@material-tailwind/react";
 import { BrowserRouter } from "react-router-dom";
 import LanguageProvider from "./Context/LanguageConntext";
