@@ -48,18 +48,18 @@ const NavbarDefault = () => {
         </Link>
       </Typography>
 
-      <Link to="/price"> 
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
+      <Link to="/price">
+        <Typography
+          as="li"
+          variant="small"
+          color="blue-gray"
+          className="p-1 font-normal"
         >
-        <a href="#" className="flex items-center">
-          Price
-        </a>
-      </Typography>
-        </Link>
+          <a href="#" className="flex items-center">
+            Price
+          </a>
+        </Typography>
+      </Link>
     </ul>
   );
 
@@ -71,22 +71,20 @@ const NavbarDefault = () => {
           href="#"
           className="mr-4 cursor-pointer py-1.5 font-medium"
         >
-          <img  className="w-[200px]  h-[60px]" src={logo} alt="" />
+          <img className="w-[200px]  h-[60px]" src={logo} alt="" />
         </Typography>
         <div className="hidden lg:block">{navList}</div>
 
-
-        <Link to='/register'>
-        
-        <Button
-          variant="gradient"
-          size="sm"
-          color="green"
-          className="hidden lg:inline-block  capitalize text-xs"
+        <Link to="/register">
+          <Button
+            variant="gradient"
+            size="sm"
+            color="green"
+            className="hidden lg:inline-block  capitalize text-xs"
           >
-          <span className="">Register/Login</span>
-        </Button>
-          </Link>
+            <span className="">Register/Login</span>
+          </Button>
+        </Link>
         <IconButton
           variant="text"
           className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
@@ -129,9 +127,11 @@ const NavbarDefault = () => {
         <div className="container flex flex-col items-center mx-auto">
           {navList}
 
-          <Button variant="gradient" size="sm" fullWidth className="mb-2 ">
-            <span>Register/Login</span>
-          </Button>
+          <Link to="/register">
+            <Button variant="gradient" size="sm" fullWidth className="mb-2 ">
+              <span>Register/Login</span>
+            </Button>
+          </Link>
         </div>
       </MobileNav>
     </Navbar>
