@@ -49,7 +49,7 @@ const SocialPage = () => {
 
   return (
     <div className="container mx-auto py-8">
-      <h2 className="text-3xl font-semibold">Staffs</h2>
+      <h2 className="text-3xl text-gray-700 font-semibold">Staffs</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
         {userProfiles.map((user, index) => (
           <div
@@ -64,12 +64,12 @@ const SocialPage = () => {
             />
             <h2 className="text-xl font-semibold">{user.name}</h2>
             <p className="text-gray-500">{user.username}</p>
-            {/* Add additional information or actions for each user profile */}
+          
           </div>
         ))}
       </div>
 
-      <h1 className="text-3xl font-semibold mb-4 mt-10">Connect with Us</h1>
+      <h1 className="text-3xl font-semibold text-gray-700 mb-4 mt-10">Connect with Us</h1>
       <ul className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {socialProfiles.map((profile, index) => (
           <li key={profile.name} className="flex items-center">
