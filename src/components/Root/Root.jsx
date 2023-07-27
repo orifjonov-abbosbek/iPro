@@ -16,10 +16,13 @@ const Root = () => {
   useEffect(() => {
     const handleOnline = () => setLoading(false);
     const handleOffline = () => setLoading(true);
+    const handleLoad = () => setLoading(false); // Handle load event to close the loader
 
     window.addEventListener("online", handleOnline);
     window.addEventListener("offline", handleOffline);
+    window.addEventListener("load", handleLoad);
 
+    // Check the connection type to see if it's slow
     if (navigator.connection) {
       const { effectiveType } = navigator.connection;
       if (effectiveType === "slow-2g" || effectiveType === "2g") {
@@ -32,6 +35,7 @@ const Root = () => {
     return () => {
       window.removeEventListener("online", handleOnline);
       window.removeEventListener("offline", handleOffline);
+      window.removeEventListener("load", handleLoad);
     };
   }, []);
 
