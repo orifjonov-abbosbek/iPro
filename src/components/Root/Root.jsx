@@ -7,11 +7,11 @@ import Price from "../../pages/Price/Price";
 import "./Root.scss";
 
 import Nav from "../navbar/nav";
-import Footer from '../Footer/Footer'
-import Register from '../../pages/RegisterAndLogin/RL'
+import Footer from "../Footer/Footer";
+import Register from "../../pages/RegisterAndLogin/RL";
 
 const Root = () => {
-  const [loading, setLoading] = useState(!navigator.onLine);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const handleOnline = () => setLoading(false);
@@ -19,6 +19,15 @@ const Root = () => {
 
     window.addEventListener("online", handleOnline);
     window.addEventListener("offline", handleOffline);
+
+    if (navigator.connection) {
+      const { effectiveType } = navigator.connection;
+      if (effectiveType === "slow-2g" || effectiveType === "2g") {
+        setLoading(true);
+      } else {
+        setLoading(false);
+      }
+    }
 
     return () => {
       window.removeEventListener("online", handleOnline);
@@ -37,7 +46,6 @@ const Root = () => {
         <Route path="/price" element={<Price />} />
         <Route path="/register" element={<Register />} />
       </Routes>
-
 
       <Footer />
     </>
